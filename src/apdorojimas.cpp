@@ -176,7 +176,7 @@ void skaityti_faila() {
     }
 
     Studentas stud;
-    vector<Studentas> grupe;
+    deque<Studentas> grupe;
     int pazymys;
     stud.ndPazymiai.reserve(pazymiuKiekis);
 
@@ -224,7 +224,7 @@ void skaityti_faila() {
     pradzia = high_resolution_clock::now();
 
     auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    vector<Studentas> protingi(splitItr, grupe.end());
+    deque<Studentas> protingi(splitItr, grupe.end());
     grupe.resize(grupe.size() - protingi.size());
     grupe.shrink_to_fit();
 
@@ -249,7 +249,7 @@ void skaityti_faila() {
     protingi.clear();
 }
 
-void isvesti_faila(vector<Studentas>& grupe, string failoPav) {
+void isvesti_faila(deque<Studentas>& grupe, string failoPav) {
     stringstream ssOut;
     ssOut << setw(20) << left << "Vardas" << setw(20) << "Pavarde" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
     ssOut << string(80, '-') << endl; 
@@ -280,7 +280,7 @@ void ivesti_ranka() {
     cin.clear();
     cin.ignore(80, '\n');
 
-    vector<Studentas> grupe;
+    deque<Studentas> grupe;
 
     while (arTesti) {
         Studentas temp;
