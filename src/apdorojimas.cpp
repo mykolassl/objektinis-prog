@@ -213,8 +213,8 @@ void skaityti_faila() {
     cout << "Failo duomenu apdorojimas uztruko " << skirtumas.count() / 1000.0 << "s" << endl;
 
     pradzia = high_resolution_clock::now();
+    
     grupe.sort(palyginti_vidurkius);
-    // sort(par, grupe.begin(), grupe.end(), palyginti_vidurkius);
     
     pabaiga = high_resolution_clock::now();
     skirtumas = duration_cast<milliseconds>(pabaiga - pradzia);
@@ -294,7 +294,6 @@ void ivesti_ranka() {
     cout << setw(20) << left << "Vardas" << setw(20) << "Pavarde" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
     cout << string(80, '-') << endl; 
 
-    // sort(grupe.begin(), grupe.end(), palyginti_vardus);
     grupe.sort(palyginti_vardus);
 
     for (const auto& i : grupe) spausdinti(i);
