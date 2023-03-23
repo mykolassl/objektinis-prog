@@ -11,7 +11,7 @@
 #include <sstream>
 #include <chrono>
 #include <execution>
-#include <deque>
+#include <list>
 
 // ************* I/O *************
 using std::cout;
@@ -35,7 +35,7 @@ using std::find_if;
 
 // ************* Konteineriai *************
 using std::vector;
-using std::deque;
+using std::list;
 using std::string;
 
 // ************* Pagalbiniai *************

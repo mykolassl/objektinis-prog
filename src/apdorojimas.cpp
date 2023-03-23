@@ -176,7 +176,7 @@ void skaityti_faila() {
     }
 
     Studentas stud;
-    vector<Studentas> grupe;
+    list<Studentas> grupe;
     int pazymys;
     stud.ndPazymiai.reserve(pazymiuKiekis);
 
@@ -213,8 +213,8 @@ void skaityti_faila() {
     cout << "Failo duomenu apdorojimas uztruko " << skirtumas.count() / 1000.0 << "s" << endl;
 
     pradzia = high_resolution_clock::now();
-
-    sort(par, grupe.begin(), grupe.end(), palyginti_vidurkius);
+    grupe.sort(palyginti_vidurkius);
+    // sort(par, grupe.begin(), grupe.end(), palyginti_vidurkius);
     
     pabaiga = high_resolution_clock::now();
     skirtumas = duration_cast<milliseconds>(pabaiga - pradzia);
@@ -224,9 +224,8 @@ void skaityti_faila() {
     pradzia = high_resolution_clock::now();
 
     auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    vector<Studentas> protingi(splitItr, grupe.end());
+    list<Studentas> protingi(splitItr, grupe.end());
     grupe.resize(grupe.size() - protingi.size());
-    grupe.shrink_to_fit();
 
     pabaiga = high_resolution_clock::now();
     skirtumas = duration_cast<milliseconds>(pabaiga - pradzia);
@@ -249,7 +248,7 @@ void skaityti_faila() {
     protingi.clear();
 }
 
-void isvesti_faila(vector<Studentas>& grupe, string failoPav) {
+void isvesti_faila(list<Studentas>& grupe, string failoPav) {
     stringstream ssOut;
     ssOut << setw(20) << left << "Vardas" << setw(20) << "Pavarde" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
     ssOut << string(80, '-') << endl; 
@@ -280,7 +279,7 @@ void ivesti_ranka() {
     cin.clear();
     cin.ignore(80, '\n');
 
-    vector<Studentas> grupe;
+    list<Studentas> grupe;
 
     while (arTesti) {
         Studentas temp;
@@ -295,7 +294,8 @@ void ivesti_ranka() {
     cout << setw(20) << left << "Vardas" << setw(20) << "Pavarde" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
     cout << string(80, '-') << endl; 
 
-    sort(grupe.begin(), grupe.end(), palyginti_vardus);
+    // sort(grupe.begin(), grupe.end(), palyginti_vardus);
+    grupe.sort(palyginti_vardus);
 
     for (const auto& i : grupe) spausdinti(i);
 
