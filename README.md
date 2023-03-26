@@ -9,6 +9,40 @@ Studentų duomenų bazė. Studentų duomenis galima įvesti ranka arba skaityti 
 
 Vietoje vidurkio taip pat galima pasirinkti studento namų darbų pažymių medianą.
 
+## Release v0.5
+
+Penktoji programos versija.
+
+### Kas pasikeitė:
+
+1. Palengvintas norimo apdoroti failo pasirinkimas.
+2. Pridėtos dvi naujos programos realizacijos naudojant `list` ir `deque` konteinerius, kurios pateiktos atitinkamose `v0.5-list` ir `v0.5-deque` šakose.
+
+### Programos spartos analizė
+
+<details>
+<summary>Vector</summary>
+
+</details>
+
+<details>
+<summary>Deque</summary>
+
+</details>
+
+<details>
+<summary>List</summary>
+
+| Studentų kiekis | Failo skaitymas | Duomenų apdorojimas | Studentų rikiavimas | Studentų atskyrimas į dvi grupes | Išvedimas į du failus | Visas programos veikimas |
+| --------------- | --------------- | ------------------- | ------------------- | -------------------------------- | --------------------- | ------------------------ |
+| 1 000           | 0.0015          | 0.002               | 0.0007              | 0.0008                           | 0.003                 | 0.007                    |
+| 10 000          | 0.014           | 0.019               | 0.003               | 0.005                            | 0.03                  | 0.07                     |
+| 100 000         | 0.1             | 0.15                | 0.045               | 0.06                             | 0.18                  | 0.52                     |
+| 1 000 000       | 0.86            | 1.43                | 0.65                | 0.5                              | 1.7                   | 5.2                      |
+| 10 000 000      | 8.7             | 15                  | 9.2                 | 4.9                              | 18.5                  | 57.6                     |
+
+</details>
+
 ## Release v0.4
 
 Ketvirtoji programos versija.
