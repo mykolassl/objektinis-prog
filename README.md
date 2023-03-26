@@ -23,6 +23,14 @@ Penktoji programos versija.
 <details>
 <summary>Vector</summary>
 
+| Studentų kiekis | Failo skaitymas | Duomenų apdorojimas | Studentų rikiavimas | Studentų atskyrimas į dvi grupes | Išvedimas į du failus | Visas programos veikimas |
+| --------------- | --------------- | ------------------- | ------------------- | -------------------------------- | --------------------- | ------------------------ |
+| 1 000           | 0.004           | 0.003               | 0.0009              | 0.0006                           | 0.004                 | 0.011                    |
+| 10 000          | 0.03            | 0.03                | 0.001               | 0.002                            | 0.02                  | 0.085                    |
+| 100 000         | 0.1             | 0.14                | 0.055               | 0.061                            | 0.17                  | 0.54                     |
+| 1 000 000       | 0.8             | 1.3                 | 0.58                | 0.48                             | 1.7                   | 5.1                      |
+| 10 000 000      | 8.5             | 15.3                | 9.1                 | 4.84                             | 17.4                  | 56.4                     |
+
 </details>
 
 <details>
