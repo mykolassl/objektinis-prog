@@ -23,10 +23,26 @@ Penktoji programos versija.
 <details>
 <summary>Vector</summary>
 
+| Studentų kiekis | Failo skaitymas | Duomenų apdorojimas | Studentų rikiavimas | Studentų atskyrimas į dvi grupes | Išvedimas į du failus | Visas programos veikimas |
+| --------------- | --------------- | ------------------- | ------------------- | -------------------------------- | --------------------- | ------------------------ |
+| 1 000           | 0.004           | 0.003               | 0.0009              | 0.0006                           | 0.004                 | 0.011                    |
+| 10 000          | 0.03            | 0.03                | 0.001               | 0.002                            | 0.02                  | 0.085                    |
+| 100 000         | 0.1             | 0.14                | 0.055               | 0.061                            | 0.17                  | 0.54                     |
+| 1 000 000       | 0.8             | 1.3                 | 0.58                | 0.48                             | 1.7                   | 5.1                      |
+| 10 000 000      | 8.5             | 15.3                | 9.1                 | 4.84                             | 17.4                  | 56.4                     |
+
 </details>
 
 <details>
 <summary>Deque</summary>
+
+| Studentų kiekis | Failo skaitymas | Duomenų apdorojimas | Studentų rikiavimas | Studentų atskyrimas į dvi grupes | Išvedimas į du failus | Visas programos veikimas |
+| --------------- | --------------- | ------------------- | ------------------- | -------------------------------- | --------------------- | ------------------------ |
+| 1 000           | 0.001           | 0.002               | 0.0006              | 0.0007                           | 0.0045                | 0.0075                   |
+| 10 000          | 0.012           | 0.016               | 0.0025              | 0.004                            | 0.024                 | 0.06                     |
+| 100 000         | 0.096           | 0.16                | 0.05                | 0.068                            | 0.18                  | 0.55                     |
+| 1 000 000       | 0.85            | 1.5                 | 0.62                | 0.51                             | 1.63                  | 5.1                      |
+| 10 000 000      | 8.3             | 13.94               | 8.9                 | 4.85                             | 17.8                  | 53.8                     |
 
 </details>
 
