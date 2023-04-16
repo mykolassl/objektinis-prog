@@ -190,7 +190,7 @@ void skaityti_faila() {
     }
 
     Studentas stud;
-    vector<Studentas> grupe;
+    deque<Studentas> grupe;
     int pazymys;
     stud.ndPazymiai.reserve(pazymiuKiekis);
 
@@ -237,7 +237,7 @@ void skaityti_faila() {
 
     pradzia = high_resolution_clock::now();
 
-    vector<Studentas> protingi, vargsai;
+    deque<Studentas> protingi, vargsai;
 
     if (dalinimo_budas == 1) dalinimas_1(grupe, vargsai, protingi);
     else dalinimas_2(grupe, protingi);
@@ -264,7 +264,7 @@ void skaityti_faila() {
     vargsai.clear();
 }
 
-void isvesti_faila(vector<Studentas>& grupe, string failoPav) {
+void isvesti_faila(deque<Studentas>& grupe, string failoPav) {
     char eilute[100];
     string output = "";
 
@@ -296,7 +296,7 @@ void ivesti_ranka() {
     cin.clear();
     cin.ignore(80, '\n');
 
-    vector<Studentas> grupe;
+    deque<Studentas> grupe;
 
     while (arTesti) {
         Studentas temp;
@@ -341,14 +341,14 @@ void generuoti_failus() {
     }
 }
 
-void dalinimas_1(vector<Studentas>& grupe, vector<Studentas>& vargsai, vector<Studentas>& protingi) {
+void dalinimas_1(deque<Studentas>& grupe, deque<Studentas>& vargsai, deque<Studentas>& protingi) {
     auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
     vargsai.assign(grupe.begin(), splitItr);
     protingi.assign(splitItr, grupe.end());
     grupe.clear();
 }
 
-void dalinimas_2(vector<Studentas>& grupe, vector<Studentas>& protingi) {
+void dalinimas_2(deque<Studentas>& grupe, deque<Studentas>& protingi) {
     auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
     protingi.assign(splitItr, grupe.end());
 
