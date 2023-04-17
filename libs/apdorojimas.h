@@ -1,6 +1,8 @@
 #pragma once
 
 #include "studentas.h"
+#include <deque>
+using std::deque;
 
 void skaityti_faila();
 void ivesti_ranka();
