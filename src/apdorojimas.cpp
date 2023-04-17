@@ -190,7 +190,7 @@ void skaityti_faila() {
     }
 
     Studentas stud;
-    vector<Studentas> grupe;
+    list<Studentas> grupe;
     int pazymys;
     stud.ndPazymiai.reserve(pazymiuKiekis);
 
@@ -228,8 +228,8 @@ void skaityti_faila() {
 
     pradzia = high_resolution_clock::now();
 
-    sort(grupe.begin(), grupe.end(), palyginti_vidurkius);
-    
+    grupe.sort(palyginti_vidurkius);
+
     pabaiga = high_resolution_clock::now();
     skirtumas = duration_cast<milliseconds>(pabaiga - pradzia);
     visasLaikas += skirtumas;
@@ -237,7 +237,7 @@ void skaityti_faila() {
 
     pradzia = high_resolution_clock::now();
 
-    vector<Studentas> protingi, vargsai;
+    list<Studentas> protingi, vargsai;
 
     if (dalinimo_budas == 1) dalinimas_1(grupe, vargsai, protingi);
     else dalinimas_2(grupe, protingi);
@@ -264,7 +264,7 @@ void skaityti_faila() {
     vargsai.clear();
 }
 
-void isvesti_faila(vector<Studentas>& grupe, string failoPav) {
+void isvesti_faila(list<Studentas>& grupe, string failoPav) {
     char eilute[100];
     string output = "";
 
@@ -296,7 +296,7 @@ void ivesti_ranka() {
     cin.clear();
     cin.ignore(80, '\n');
 
-    vector<Studentas> grupe;
+    list<Studentas> grupe;
 
     while (arTesti) {
         Studentas temp;
@@ -341,17 +341,17 @@ void generuoti_failus() {
     }
 }
 
-void dalinimas_1(vector<Studentas>& grupe, vector<Studentas>& vargsai, vector<Studentas>& protingi) {
-    auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    vargsai.assign(grupe.begin(), splitItr);
-    protingi.assign(splitItr, grupe.end());
-    grupe.clear();
+void dalinimas_1(list<Studentas>& grupe, list<Studentas>& vargsai, list<Studentas>& protingi) {
+    // auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
+    // vargsai.assign(grupe.begin(), splitItr);
+    // protingi.assign(splitItr, grupe.end());
+    // grupe.clear();
 }
 
-void dalinimas_2(vector<Studentas>& grupe, vector<Studentas>& protingi) {
-    auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    protingi.assign(splitItr, grupe.end());
+void dalinimas_2(list<Studentas>& grupe, list<Studentas>& protingi) {
+    // auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
+    // protingi.assign(splitItr, grupe.end());
 
-    grupe.resize(grupe.size() - protingi.size());
-    grupe.shrink_to_fit();
+    // grupe.resize(grupe.size() - protingi.size());
+    // grupe.shrink_to_fit();
 }
