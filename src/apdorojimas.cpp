@@ -311,7 +311,7 @@ void ivesti_ranka() {
     cout << setw(20) << left << "Vardas" << setw(20) << "Pavarde" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
     cout << string(80, '-') << endl; 
 
-    sort(grupe.begin(), grupe.end(), palyginti_vardus);
+    grupe.sort(palyginti_vardus);
 
     for (const auto& i : grupe) spausdinti(i);
 
@@ -342,16 +342,15 @@ void generuoti_failus() {
 }
 
 void dalinimas_1(list<Studentas>& grupe, list<Studentas>& vargsai, list<Studentas>& protingi) {
-    // auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    // vargsai.assign(grupe.begin(), splitItr);
-    // protingi.assign(splitItr, grupe.end());
-    // grupe.clear();
+    auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
+    vargsai.assign(grupe.begin(), splitItr);
+    protingi.assign(splitItr, grupe.end());
+    grupe.clear();
 }
 
 void dalinimas_2(list<Studentas>& grupe, list<Studentas>& protingi) {
-    // auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
-    // protingi.assign(splitItr, grupe.end());
+    auto splitItr = find_if(grupe.begin(), grupe.end(), surasti_maziausia);
+    protingi.assign(splitItr, grupe.end());
 
-    // grupe.resize(grupe.size() - protingi.size());
-    // grupe.shrink_to_fit();
+    grupe.resize(grupe.size() - protingi.size());
 }
